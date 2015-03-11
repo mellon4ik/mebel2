@@ -1,0 +1,372 @@
+#top
+  min-height: 30px
+  border-top: 2px solid $blue
+  border-bottom: 1px solid $line-color
+  .nav
+    .list-inline
+      li
+        padding-right: 30px
+        a
+          text-transform: uppercase
+          line-height: 30px
+          font-size: 0.875em
+    .list-underlined
+      border-bottom: 3px solid $orange
+      li
+        display: inline-block
+        .a-enter, .a-registration
+          text-transform: uppercase
+          line-height: 30px
+          font-size: 0.875em
+          .span-enter
+            padding-right: 10px
+            border-right: 1px solid $text-color
+            line-height: 28px
+          .span-registration
+            padding-left: 10px
+            line-height: 26px
+
+header
+  .wrapper
+    padding: 17px 10px
+    .col-sm-3
+      padding: 0
+      padding-left: 13px
+      width: 28%
+      #logo h1 a
+        margin: 0 !important
+        font-size: 0.8125em
+        color: $text-orange
+    .col-sm-6
+      padding: 0
+      padding-left: 15px
+      width: 51%
+    .telephone
+      font-size: 1em
+      font-weight: 700
+      padding: 0
+      padding-left: 23px
+      margin: 0
+      width: 21%
+<<<<<<< HEAD
+      a
+        position: relative
+        border-bottom: 2px dotted $sort-color
+        margin-left: 25px
+        &:before
+          position: absolute
+          content: ''
+          width: 25px
+          height: 25px
+          display: inline-block
+          top: 0
+          left: -24px
+          background: url(../image/sprite.png) -11px -281px no-repeat
+=======
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+
+#search
+  margin-bottom: 10px
+  .input-lg
+    height: 32px
+    line-height: 20px
+    padding: 0 10px
+  .btn-lg
+    line-height: 18px
+    padding: 5px 5px
+    text-shadow: 0 1px 0 #FFF
+    .fa-search
+      color: #fff
+<<<<<<< HEAD
+      font-size: 19px
+
+/*Main-menu*/
+.navbar
+  .wrapper
+    padding: 0
+    .navbar-collapse
+      padding: 0
+      .navbar-nav
+        width: 100%
+        padding-right: 75px
+      #cart
+        position: absolute
+        top: 0
+        right: 0
+        width: auto
+        height: 100%
+        .btn
+          height: 100%
+#menu
+  background-color: #06c1c0
+  background-image: linear-gradient(to right, #18adb2 0%,#02c5c3 100%)
+  background-repeat: repeat-x
+  border: none
+  border-radius: 0
+  min-height: 40px
+  font-family: "Roboto Condensed", sans-serif
+  .nav > li
+    text-align: center
+    &:hover
+      background-color: #0e9fa4
+    > a
+      font-size: 1em
+      color: #fff
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25)
+      text-transform: uppercase
+      min-height: 15px
+      padding: 10px
+      background-color: transparent
+      transition: all 0.4s ease
+      img
+        display: block
+        margin: 0 auto
+    &.open > a
+      background-color: rgba(0, 0, 0, 0.1)
+  .dropdown-menu
+    padding-bottom: 0
+    border-bottom: 8px solid #0cbbbc
+  .dropdown-inner
+    display: table
+    .level_2_category
+      display: table-cell
+      text-align: left
+      > a
+        position: relative
+        min-width: 160px
+        display: block
+        padding: 15px 20px
+        clear: both
+        line-height: 20px
+        font-size: 18px
+        font-weight: 700
+        color: $text-colored
+        &:before
+          content: ''
+          display: inline-block
+          width: 6px
+          height: 6px
+          border-radius: 50%
+          background: $orange
+          margin: 0 20px 3px 0
+      .level-3 li > a
+        display: inline-block
+        padding: 8px 0
+        font-size: 14px
+        color: #242529
+        font-weight: 300
+        &:before
+          content: '-'
+          display: inline-block
+          margin-right: 5px
+  .see-all
+    display: block
+    margin-top: 0.5em
+    border-top: 1px solid #DDD
+    padding: 3px 20px
+    font-size: 14px
+    &:hover, &:focus
+      text-decoration: none
+      color: #ffffff
+      background-color: #04C3C2
+  #category
+    float: left
+    padding-left: 15px
+    font-size: 16px
+    font-weight: 700
+    line-height: 40px
+    color: #fff
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2)
+  .btn-navbar
+    font-size: 15px
+    font-stretch: expanded
+    color: #FFF
+    padding: 2px 18px
+    float: right
+    background-color: #229ac8
+    background-image: linear-gradient(to bottom, #23a1d1, #1f90bb)
+    background-repeat: repeat-x
+    border-color: #1f90bb #1f90bb #145e7a
+    &:hover, &:focus, &:active, &.disabled, &[disabled]
+      color: #ffffff
+      background-color: #229ac8
+#cart
+  .btn-inverse
+    border: 0
+    padding: 0 10px
+    border-radius: 0
+    background: linear-gradient(to bottom, #ffa900 0%,#fe8300 100%)
+    transition: all 0.4s ease
+    &:hover
+      background: #e7701e
+    #cart-total
+      line-height: 25px
+      display: inline-block
+      font-size: 14px
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25)
+    .img-cart-menu
+      background: url(../image/sprite.png) 0 -40px no-repeat
+      height: 25px
+      width: 26px
+      display: block
+      margin: 0 auto
+
+/*Dropdown menu*/
+.nav.navbar-nav
+  .dropdown-menu
+    width: auto
+    background: #fff url(../image/dropdown-bg.jpg) right bottom no-repeat
+    background-size: contain
+    .dropdown-inner
+      padding-bottom: 50px
+
+
+
+/*Modals*/
+.modal-dialog
+  width: 450px
+.modal-content
+  border: none
+  border-radius: 0
+  border-bottom: 8px solid #0cbbbc
+.modal-header
+  text-align: center
+  border-bottom: none
+  span[aria-hidden="true"]
+    color: $text-colored
+  .modal-title
+    position: relative
+    display: inline-block
+    font-size: 24px
+    color: $text-colored
+    text-transform: uppercase
+    &:before
+      content: ''
+      position: absolute
+      top: 40%
+      left: -15px
+      display: inline-block
+      height: 6px
+      width: 6px
+      background: $orange
+      border-radius: 50%
+    &:after
+      content: ''
+      position: absolute
+      top: 40%
+      right: -15px
+      display: inline-block
+      height: 6px
+      width: 6px
+      background: $orange
+      border-radius: 50%
+.modal-body
+  padding: 5px 65px 1px
+  .form-control
+    border-radius: 0
+    color: $text-color
+    font-size: 16px !important
+    font-family: "Roboto Condensed", sans-serif
+    font-weight: 400
+    padding-left: 55px
+  #login_email, #register_firstname, #callback_name
+    background: url(../image/sprite.png) 0 -173px no-repeat
+  #login_password, #register_password, #register_confirm
+    background: url(../image/sprite.png) 0 -209px no-repeat
+  #register_email
+    background: url(../image/sprite.png) 0 -242px no-repeat
+  #register_email
+    background: url(../image/sprite.png) 0 -242px no-repeat
+  #register_telephone, #callback_telephone
+    background: url(../image/sprite.png) 0 -276px no-repeat
+.modal-footer
+  position: relative
+  margin-top: 0
+  border-top: 0
+  padding: 10px 65px 20px
+  .pull-right
+    margin-top: 10px
+    a
+      font-size: 14px
+      color: #a4a4a4
+      text-decoration: underline
+      font-family: "Roboto Condensed", sans-serif
+  .btn-primary
+    width: 100%
+    font-size: 18px
+    color: #fff
+    background: $button-buy url(../image/background.svg) 0 0 no-repeat
+    background-size: cover
+    border: none
+    text-shadow: none
+    text-transform: uppercase
+    border-radius: 0
+    text-decoration: none
+    font-family: "Roboto Condensed", sans-serif
+    transition: all 0.4s ease
+    &:focus
+      outline: none
+    &:hover
+      background: $button-hover url(../image/background.svg) 0 0 no-repeat
+      background-size: cover
+  .spike-modal
+    position: absolute
+    bottom: 100px
+    left: 116px
+    background: #fff
+    padding: 0 10px
+    font-size: 16px
+    font-weight: 700
+    color: #6a6f6f
+    font-family: "Roboto Condensed", sans-serif
+#uLogin_0c554cda, #uLogin_e8aa5952
+  position: relative
+  border: 1px solid #d8d8d8
+  padding: 20px 0 15px
+  margin: 50px 0 20px
+  text-align: center
+  div
+    width: 165px !important
+    div[data-uloginbutton="googleplus"]
+      width: 38px !important
+      height: 38px !important
+      margin-right: 20px !important
+      background: #0cbbbc url(../image/social.png) 0 -38px no-repeat !important
+    div[data-uloginbutton="facebook"]
+      width: 38px !important
+      height: 38px !important
+      margin-right: 20px !important
+      background: #0cbbbc url(../image/social.png) 0 0 no-repeat !important
+    div[data-uloginbutton="vkontakte"]
+      width: 38px !important
+      height: 38px !important
+      background: #0cbbbc url(../image/social.png) 0 -76px no-repeat !important
+#uLogin_e8aa5952
+  margin: 105px 0 20px
+.spike-modal-register
+  position: absolute
+  bottom: 100px
+  left: 72px
+  background: #fff
+  padding: 0 10px
+  font-size: 16px
+  font-weight: 700
+  color: #6a6f6f
+  font-family: "Roboto Condensed", sans-serif
+#cartModalLabel
+  span
+    position: relative
+    text-decoration: underline
+    color: #587c78
+    &:before
+      content: ''
+      width: 30px
+      height: 26px
+      display: inline-block
+      position: absolute
+      top: 0
+      left: -31px
+      background: url(../image/sprite.png) 0 -315px no-repeat
+=======
+      font-size: 19px
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+
+    <file name="catalog/view/theme/default/template/common/header.tpl">
+        <operation error="log">
+            <search position="replace"><![CDATA[<li><a href="<?php echo $login; ?>" class="a-enter"><span class="span-enter hidden-xs"><?php echo $text_login; ?></span></a></li>]]></search>
+            <add><![CDATA[<li><a class="a-enter" href="javascript: void(null);" data-toggle="modal" data-target="#login"><span class="span-enter hidden-xs"><?php echo $text_login; ?></span></a></li>]]></add>
+        </operation>
+        <operation error="log">
+            <search position="replace"><![CDATA[<li><a href="<?php echo $register; ?>" class="a-registration"><span class="span-registration hidden-xs"><?php echo $text_register; ?></span></a></li>]]></search>
+            <add><![CDATA[<li><a class="a-registration" href="javascript: void(null);" data-toggle="modal" data-target="#register"><span class="span-registration hidden-xs"><?php echo $text_register; ?></span></a></li>]]></add>
+        </operation>
+        <operation error="log">
+            <search position="after"><![CDATA[</nav>]]></search>
+            <add><![CDATA[
+				<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-sm">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<<<<<<< HEAD
+						<h4 class="modal-title" id="loginLabel"><?php echo $text_header_login; ?></h4>
+=======
+						<h4 class="modal-title" id="loginLabel"><?php echo $text_login; ?></h4>
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+					  </div>
+					  <div class="modal-body">
+					  	<form name="login_form" id="login_form" action="javascript: void(null);" onsubmit="ajaxLogin.submit(this);">
+							<p class="text-danger hidden"></p>
+					  		<div class="form-group">
+					  			<input type="email" class="form-control" id="login_email" name="email" placeholder="<?php echo $text_login_email; ?>" />
+					  		</div>
+					  		<div class="form-group">
+								<input type="password" class="form-control" id="login_password" name='password' placeholder='<?php echo $text_login_password; ?>' />
+					  		</div>
+					  	</form>
+					  </div>
+					  <div class="modal-footer">
+<<<<<<< HEAD
+					  	<input type="submit" class="btn btn-primary" value="<?php echo $text_button_login; ?>" form="login_form" />
+					  	<div class="pull-left checkbox"><input type="checkbox" id="check1"><label for="check1">Запомнить меня</label></div>
+					  	<div class="pull-right text-right">
+							<a href="<?php echo $login_forgotten_password; ?>"><?php echo $text_login_forgotten_password; ?></a><br />
+							<!-- <a href="javascript: void(null);" id="login_not_register" onclick='ajaxRegister.show();'><?php echo $text_not_register; ?></a><br /> -->
+						</div>
+						<div id="uLogin_0c554cda" data-uloginid="0c554cda"></div>
+						<div class="spike-modal">Или войдите с помощью</div>
+=======
+					  	<div class="pull-left text-left">
+							<a href="<?php echo $login_forgotten_password; ?>"><?php echo $text_login_forgotten_password; ?></a><br />
+							<a href="javascript: void(null);" id="login_not_register" onclick='ajaxRegister.show();'><?php echo $text_not_register; ?></a><br />
+						</div>
+						<input type="submit" class="btn btn-primary pull-right" value="<?php echo $text_login; ?>" form="login_form" />
+						<div id="uLogin_0c554cda" data-uloginid="0c554cda"></div>
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+					  </div>
+					</div>
+				  </div>
+				</div>
+
+				<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="registerLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-sm">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="registerLabel"><?php echo $text_register; ?></h4>
+					  </div>
+					  <div class="modal-body">
+					  	<form name="register_form" id="register_form" action="javascript: void(null);" onsubmit="ajaxRegister.submit(this);">
+							<p class="text-danger hidden"></p>
+					  		<div class="form-group">
+					  			<input type="email" class="form-control" id="register_email" name="email" placeholder="<?php echo $text_register_email; ?>" />
+					  		</div>
+					  		<div class="form-group">
+								<input type="text" class="form-control" id="register_firstname" name='firstname' placeholder="<?php echo $text_register_firstname; ?>" />
+					  		</div>
+					  		<div class="form-group">
+								<input type="text" class="form-control" id="register_telephone" name='telephone' placeholder="<?php echo $text_register_telephone; ?>" />
+					  		</div>
+					  		<div class="form-group">
+								<input type="password" class="form-control" id="register_password" name='password' placeholder="<?php echo $text_register_password; ?>" />
+					  		</div>
+					  		<div class="form-group">
+								<input type="password" class="form-control" id="register_confirm" name='confirm' placeholder="<?php echo $text_register_confirm; ?>" />
+					  		</div>
+					  		<div class="form-group hidden">
+								<input type="text" class="form-control" id="register_lastname" name='lastname' />
+					  		</div>
+					  		<div class="form-group hidden">
+								<input type="text" class="form-control" id="register_city" name='city' />
+					  		</div>
+					  		<div class="form-group hidden">
+								<input type="text" class="form-control" id="register_address_1" name='address_1' />
+					  		</div>
+					  		<div class="form-group hidden">
+								<input type="text" class="form-control" id="register_fax" name='fax' />
+					  		</div>
+					  		<div class="form-group hidden">
+								<input type="text" class="form-control" id="register_company" name='company' />
+					  		</div>
+					  		<div class="form-group hidden">
+								<input type="text" class="form-control" id="register_address_2" name='address_2' />
+					  		</div>
+					  		<div class="form-group hidden">
+								<input type="text" class="form-control" id="register_postcode" name='postcode' />
+					  		</div>
+					  		<div class="form-group hidden">
+								<input type="text" class="form-control" id="register_country_id" name='country_id' />
+					  		</div>
+					  		<div class="form-group hidden">
+								<input type="text" class="form-control" id="register_zone_id" name='zone_id' />
+					  		</div>
+					  	</form>
+					  </div>
+					  <div class="modal-footer">
+<<<<<<< HEAD
+						<input type="submit" class="btn btn-primary pull-right" value="<?php echo $text_register_button; ?>" form="register_form" />
+					  	<div class="pull-right text-right">
+							<a href="javascript: void(null);" id="login_already_register" onclick='ajaxLogin.show();'><?php echo $text_already_register; ?></a><br />
+						</div>
+						<div id="uLogin_e8aa5952" data-uloginid="e8aa5952"></div>
+						<div class="spike-modal-register">Или зарегистрируйтесь с помощью</div>
+=======
+					  	<div class="pull-left text-left">
+							<a href="javascript: void(null);" id="login_already_register" onclick='ajaxLogin.show();'><?php echo $text_already_register; ?></a><br />
+						</div>
+						<input type="submit" class="btn btn-primary pull-right" value="<?php echo $text_register; ?>" form="register_form" />
+						<div id="uLogin_e8aa5952" data-uloginid="e8aa5952"></div>
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+					  </div>
+					</div>
+				  </div>
+				</div>
+
+				<div class="modal fade" id="register_success" tabindex="-1" role="dialog" aria-labelledby="registerSuccessLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-sm">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="registerSuccessLabel"><?php echo $text_register_success_header; ?></h4>
+					  </div>
+					  <div class="modal-body">
+					  	<h4><?php echo $text_register_success; ?></h4>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			]]></add>
+        </operation>
+		<operation error="log">
+			<search position="after"><![CDATA[<script src="catalog/view/javascript/common.js" type="text/javascript"></script>]]></search>
+			<add><![CDATA[
+				<script src="catalog/view/javascript/ajax_register_login.js" type="text/javascript"></script>
+				<script src="//ulogin.ru/js/ulogin.js" type="text/javascript"></script>
+				<script src="catalog/view/javascript/ulogin.js" type="text/javascript"></script>
+			]]></add>
+		</operation>
+    </file>
+
+	<file name="catalog/language/russian/common/header.php">
+
+		<operation error="log">
+			<search position="after"><![CDATA[$_['text_home']          = 'Главная';]]></search>
+			<add><![CDATA[
+				$_['text_login_email'] = "Ваш E-mail";
+				$_['text_login_password'] = "Ваш пароль";
+				$_['text_login_forgotten_password'] = "Забыли пароль?";
+				$_['text_not_register'] = "Еще не зарегистрированы?";
+
+				$_['text_register_email'] = "E-mail*";
+				$_['text_register_password'] = "Пароль*";
+				$_['text_register_confirm'] = "Пароль еще раз*";
+				$_['text_register_firstname'] = "Имя*";
+				$_['text_register_lastname'] = "Фамилия";
+				$_['text_register_telephone'] = "Телефон*";
+				$_['text_register_city'] = "Город";
+				$_['text_register_address_1'] = "Адрес";
+				$_['text_register_fax'] = "Факс";
+				$_['text_register_company'] = "Компания";
+				$_['text_register_address_2'] = "Адрес (продолжение)";
+				$_['text_register_postcode'] = "Индекс";
+				$_['text_register_country_id'] = "Страна";
+				$_['text_register_zone_id'] = "Регион / Область";
+<<<<<<< HEAD
+				$_['text_already_register'] = "Уже зарегистрированы?";
+=======
+				$_['text_already_register'] = "Есть аккаунт?";
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+				$_['text_register_success_header'] = "Статус регистрации";
+				$_['text_register_success'] = "Регистрация прошла успешно. На Ваш E-mail были отправлены дальнейшие инструкции.";
+			]]></add>
+		</operation>
+
+	</file>
+
+	<file name="catalog/controller/common/header.php">
+
+		<operation error="log">
+			<search position="after"><![CDATA[$data['text_register'] = $this->language->get('text_register');]]></search>
+			<add><![CDATA[
+				$data['text_login_email'] = $this->language->get('text_login_email');
+				$data['text_login_password'] = $this->language->get('text_login_password');
+				$data['text_login_forgotten_password'] = $this->language->get('text_login_forgotten_password');
+				$data['text_not_register'] = $this->language->get('text_not_register');
+
+				$data['text_register_email'] = $this->language->get('text_register_email');
+				$data['text_register_password'] = $this->language->get('text_register_password');
+				$data['text_register_confirm'] = $this->language->get('text_register_confirm');
+				$data['text_register_firstname'] = $this->language->get('text_register_firstname');
+				$data['text_register_lastname'] = $this->language->get('text_register_lastname');
+				$data['text_register_telephone'] = $this->language->get('text_register_telephone');
+				$data['text_register_city'] = $this->language->get('text_register_city');
+				$data['text_register_address_1'] = $this->language->get('text_register_address_1');
+				$data['text_register_fax'] = $this->language->get('text_register_fax');
+				$data['text_register_company'] = $this->language->get('text_register_company');
+				$data['text_register_address_2'] = $this->language->get('text_register_address_2');
+				$data['text_register_postcode'] = $this->language->get('text_register_postcode');
+				$data['text_register_country_id'] = $this->language->get('text_register_country_id');
+				$data['text_register_zone_id'] = $this->language->get('text_register_zone_id');
+				$data['text_already_register'] = $this->language->get('text_already_register');
+				$data['text_register_success_header'] = $this->language->get('text_register_success_header');
+				$data['text_register_success'] = $this->language->get('text_register_success');
+			]]></add>
+		</operation>
+
+	</file>
+
+</modification>

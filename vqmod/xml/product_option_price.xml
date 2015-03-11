@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+
+	<file name="catalog/view/theme/default/template/product/product.tpl">
+        <operation error="log">
+            <search position="replace"><![CDATA[<option src="<?php echo $option_value['option_value_image']; ?>" value="<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>]]></search>
+            <add><![CDATA[<option data-option-price="<?php echo $option_value['price']; ?>" data-option-price-prefix="<?php echo $option_value['price_prefix']; ?>" src="<?php echo $option_value['option_value_image']; ?>" value="<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>]]></add>
+        </operation>
+        <operation error="log">
+            <search position="replace"><![CDATA[<input class="thumb" src="<?php echo $option_value['option_value_image']; ?>" type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>"/>]]></search>
+            <add><![CDATA[<input data-option-price="<?php echo $option_value['price']; ?>" data-option-price-prefix="<?php echo $option_value['price_prefix']; ?>" class="thumb" src="<?php echo $option_value['option_value_image']; ?>" type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>"/>]]></add>
+        </operation>
+        <operation error="log">
+            <search position="replace"><![CDATA[<input type="checkbox" name="option[<?php echo $option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>"/>]]></search>
+            <add><![CDATA[<input data-option-price="<?php echo $option_value['price']; ?>" data-option-price-prefix="<?php echo $option_value['price_prefix']; ?>" type="checkbox" name="option[<?php echo $option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>"/>]]></add>
+        </operation>
+        <operation error="log">
+            <search position="replace"><![CDATA[<input class="thumb hidden" src="<?php echo $option_value['option_value_image']; ?>" src-thumb="<?php echo $option_value['option_value_image_thumb']; ?>" src-slider="<?php echo $option_value['option_value_image_slider']; ?>" type="radio" name="option[<?php echo $option['product_option_id']; ?>]" data-image-path="<?php echo $option_value['option_value_image_path']; ?>" value="<?php echo $option_value['product_option_value_id']; ?>" onclick="setColor(this);"/>]]></search>
+            <add><![CDATA[<input data-option-price="<?php echo $option_value['price']; ?>" data-option-price-prefix="<?php echo $option_value['price_prefix']; ?>" class="thumb hidden" src="<?php echo $option_value['option_value_image']; ?>" src-thumb="<?php echo $option_value['option_value_image_thumb']; ?>" src-slider="<?php echo $option_value['option_value_image_slider']; ?>" type="radio" name="option[<?php echo $option['product_option_id']; ?>]" data-image-path="<?php echo $option_value['option_value_image_path']; ?>" value="<?php echo $option_value['product_option_value_id']; ?>" onclick="setColor(this);"/>]]></add>
+        </operation>
+        <operation error="log">
+            <search position="before"><![CDATA[<?php echo $footer; ?>]]></search>
+            <add><![CDATA[
+                <script>
+                    $(function () {
+                        var originalPrice = 0;
+                        var currency = "";
+                        <?php if (!$special) { ?>
+                            originalPrice = <?php echo (float) $price; ?>;
+                            currency = '<?php echo explode(" ", $price)[1]; ?>';
+                        <?php } else { ?>
+                            originalPrice = <?php echo (float) $special; ?>;
+                            currency = '<?php echo explode(" ", $special)[1]; ?>';
+                        <?php } ?>
+
+
+                        $('#product select.form-control, #product input[type=radio], #product input[type=checkbox], #product input#input-quantity').on('change', function () {
+                            regenerateMainPrice(originalPrice, currency);
+                        });
+                    });
+
+                    function getSum(originalPrice, price, prefix) {
+                        switch (prefix) {
+                            case '-':
+                                return parseFloat(originalPrice) - parseFloat(price);
+                            case '+':
+                                return parseFloat(originalPrice) + parseFloat(price);
+                        }
+                    }
+
+                    function regenerateMainPrice(originalPrice, currency) {
+                        var sum = 0;
+                        $('#product select.form-control').each(function () {
+                            var price = $(this).find(':selected').attr('data-option-price');
+                            var prefix = $(this).find(':selected').attr('data-option-price-prefix');
+                            if (price && prefix) {
+                                sum = getSum(sum, price, prefix);
+                            }
+                        });
+                        $('#product input[type=radio]:checked').each(function () {
+                            var price = $(this).attr('data-option-price');
+                            var prefix = $(this).attr('data-option-price-prefix');
+                            if (price && prefix) {
+                                sum = getSum(sum, price, prefix);
+                            }
+                        });
+                        $('#product input[type=checkbox]:checked').each(function () {
+                            var price = $(this).attr('data-option-price');
+                            var prefix = $(this).attr('data-option-price-prefix');
+                            if (price && prefix) {
+                                sum = getSum(sum, price, prefix);
+                            }
+                        });
+                        chaingePrice(originalPrice, sum, currency);
+                    }
+
+                    function chaingePrice(originalPrice, changedPrice, currency) {
+                        var quantity = $('#product input#input-quantity').val();
+                        $('.container #product h2').text((originalPrice + changedPrice) * quantity + ' ' + currency);
+                    }
+                </script>
+            ]]></add>
+        </operation>
+	</file>
+
+</modification>

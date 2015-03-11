@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+
+	<file name="catalog/view/theme/default/template/common/cart.tpl">
+		<operation error="log">
+			<search position="after"><![CDATA[<div id="fast-order">]]></search>
+			<add><![CDATA[
+				<form name="fast_order_modal_cart" id="fast_order_modal_cart" action="javascript: void(null);" onsubmit="fast_order.add(this);" class="text-center">
+					<p class="text-danger hidden"></p>
+					<div class="form-group">
+						<input type="text" name="telephone" placeholder="+38 (___) ___-__-__" />
+						<input type="submit" name="submit" value="Купить в 1 клик" />
+					</div>
+					</form>
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/view/theme/default/template/common/footer.tpl">
+		<operation error="log">
+			<search position="before"><![CDATA[</body></html>]]></search>
+			<add><![CDATA[
+				<script src="catalog/view/javascript/fast_order.js" type="text/javascript"></script>
+			]]></add>
+		</operation>
+	</file>
+
+</modification>

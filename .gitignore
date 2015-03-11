@@ -1,0 +1,9 @@
+~
+config.php
+vqmod/logs
+vqmod/vqcache
+system/cache
+system/logs
+admin/config.php
+.idea
+system/modification

@@ -1,0 +1,24 @@
+<modification>
+    <id>Ajax product loader</id>
+    <version>1.0</version>
+    <vqmver>2.1.5</vqmver>
+    <author>Denisov Konstantin</author>
+    <website>http://www.grissoft.com.ua</website>
+    <email>support@grissoft.com.ua</email>
+        <file name="catalog/view/theme/*/template/common/header.tpl">
+            <operation>
+                <search position="before">
+                    <![CDATA[
+                        </head>
+                    ]]>
+                </search>
+                <add>
+                    <![CDATA[
+                        <script type="text/javascript" src="catalog/view/javascript/ajax_product_loader.js"></script>
+                        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/ajax_product_loader.css" />
+                    ]]>
+                </add>
+            </operation>
+            
+        </file>
+</modification>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+
+	<file name="catalog/view/theme/default/template/common/header.tpl">
+		<operation error="log">
+			<search position="after"><![CDATA[<span><?php echo $telephone_3; ?></span>]]></search>
+			<add><![CDATA[<a href="javascript: void(null);" data-toggle="modal" data-target="#callback"><?php echo $text_callback; ?></a>]]></add>
+		</operation>
+		<operation error="log">
+			<search position="after"><![CDATA[<script src="catalog/view/javascript/common.js" type="text/javascript"></script>]]></search>
+			<add><![CDATA[<script src="catalog/view/javascript/callback.js" type="text/javascript"></script>]]></add>
+		</operation>
+		<operation error="log">
+			<search position="after"><![CDATA[<a href="javascript: void(null);" data-toggle="modal" data-target="#callback"><?php echo $text_callback; ?></a>]]></search>
+			<add><![CDATA[
+				<div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="callbackLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-sm">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="callbackLabel"><?php echo $text_callback_header; ?></h4>
+					  </div>
+					  <div class="modal-body">
+					  	<form name="callback_form" id="callback_form" action="javascript: void(null);" onsubmit="callback.submit(this);">
+							<p class="text-danger hidden"></p>
+					  		<div class="form-group">
+					  			<input type="text" class="form-control" id="callback_name" name="name" placeholder="<?php echo $text_callback_name; ?>" />
+					  		</div>
+					  		<div class="form-group">
+								<input type="text" class="form-control" id="callback_telephone" name='telephone' placeholder='<?php echo $text_callback_telephone; ?>' />
+					  		</div>
+					  	</form>
+					  </div>
+					  <div class="modal-footer">
+						<input type="submit" class="btn btn-primary pull-right" value="<?php echo $text_callback_submit; ?>" form="callback_form" />
+					  </div>
+					</div>
+				  </div>
+				</div>
+
+				<div class="modal fade" id="callback_success" tabindex="-1" role="dialog" aria-labelledby="callbackSuccessLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-sm">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="callbackSuccessLabel"><?php echo $text_callback_success_header; ?></h4>
+					  </div>
+					  <div class="modal-body">
+					  	<h4><?php echo $text_callback_success; ?></h4>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/controller/common/header.php">
+		<operation error="log">
+			<search position="after"><![CDATA[$data['text_all'] = $this->language->get('text_all');]]></search>
+			<add><![CDATA[
+				$data['text_callback'] = $this->language->get('text_callback');
+				$data['text_callback_header'] = $this->language->get('text_callback_header');
+				$data['text_callback_name'] = $this->language->get('text_callback_name');
+				$data['text_callback_telephone'] = $this->language->get('text_callback_telephone');
+				$data['text_callback_submit'] = $this->language->get('text_callback_submit');
+				$data['text_callback_success_header'] = $this->language->get('text_callback_success_header');
+				$data['text_callback_success'] = $this->language->get('text_callback_success');
+				$data['callback_error_name'] = $this->language->get('callback_error_name');
+				$data['callback_error_phone'] = $this->language->get('callback_error_phone');
+				$data['text_callback_email_subject'] = $this->language->get('text_callback_email_subject');
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/language/russian/common/header.php">
+		<operation error="log">
+			<search position="replace"><![CDATA[$_['text_home']          = 'Главная';]]></search>
+			<add><![CDATA[
+				$_['text_callback'] = 'обратный звонок';
+				$_['text_callback_header'] = 'Заказать обратный звонок';
+				$_['text_callback_name'] = 'Ваше имя';
+				$_['text_callback_telephone'] = 'Ваш телефон';
+				$_['text_callback_submit'] = 'Перезвоните мне';
+				$_['text_callback_success_header'] = 'Заявка принята';
+				$_['text_callback_success'] = 'Ваша заявка принята, пожалуйста, ожидайте, наш менеджер в ближайшее время с Вами свяжется';
+				$_['callback_error_name'] = 'Имя должно содержать от 1 до 32 символов!';
+				$_['callback_error_phone'] = 'Не верно введен телефон!';
+				$_['text_callback_email_subject'] = '%s, обратный звонок';
+			]]></add>
+		</operation>
+	</file>
+
+</modification>

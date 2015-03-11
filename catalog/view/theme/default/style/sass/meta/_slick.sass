@@ -1,0 +1,317 @@
+@charset "UTF-8"
+
+.slick-slider
+  position: relative
+  display: block
+  box-sizing: border-box
+  -moz-box-sizing: border-box
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  -ms-touch-action: pan-y
+  touch-action: pan-y
+  -webkit-tap-highlight-color: transparent
+
+.slick-list
+  position: relative
+  overflow: hidden
+  display: block
+  margin: 0
+<<<<<<< HEAD
+  padding: 30px 0
+=======
+  padding: 0
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+  &:focus
+    outline: none
+
+.slick-loading .slick-list
+  background: white url("../../../javascript/jquery/slick/ajax-loader.gif") center center no-repeat
+
+.slick-list.dragging
+  cursor: pointer
+  cursor: hand
+
+.slick-slider .slick-track
+  -webkit-transform: translate3d(0, 0, 0)
+  -moz-transform: translate3d(0, 0, 0)
+  -ms-transform: translate3d(0, 0, 0)
+  -o-transform: translate3d(0, 0, 0)
+  transform: translate3d(0, 0, 0)
+
+.slick-track
+  position: relative
+  left: 0
+  top: 0
+  display: block
+  &:before
+    content: ""
+    display: table
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+.slick-loading .slick-track
+  visibility: hidden
+
+.slick-slide
+  float: left
+  height: 100%
+  min-height: 1px
+  display: none
+
+[dir="rtl"] .slick-slide
+  float: right
+
+.slick-slide
+  img
+    display: block
+  &.slick-loading img
+    display: none
+  &.dragging img
+    pointer-events: none
+
+.slick-initialized .slick-slide
+  display: block
+
+.slick-loading .slick-slide
+  visibility: hidden
+
+.slick-slide.slick-active
+  padding-top: 10px !important
+  
+.slick-vertical .slick-slide
+  display: block
+  height: auto
+  border: 1px solid transparent
+
+<<<<<<< HEAD
+=======
+@font-face
+  font-family: "slick"
+  src: url("../../../javascript/jquery/slick/fonts/slick.eot")
+  src: url("../../../javascript/jquery/slick/fonts/slick.eot?#iefix") format("embedded-opentype"), url("../../../javascript/jquery/slick/fonts/slick.woff") format("woff"), url("../../../javascript/jquery/slick/fonts/slick.ttf") format("truetype"), url("../../../javascript/jquery/slick/fonts/slick.svg#slick") format("svg")
+  font-weight: normal
+  font-style: normal
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+
+.slick-prev, .slick-next
+  position: absolute
+  display: block
+  height: 20px
+  width: 20px
+  line-height: 0
+  font-size: 0
+  cursor: pointer
+<<<<<<< HEAD
+  background: #e3e3e3
+  // color: transparent
+  top: 100%
+=======
+  background: transparent
+  color: transparent
+  top: 50%
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+  margin-top: -10px
+  padding: 0
+  border: none
+  outline: none
+
+.slick-prev
+  &:hover, &:focus
+    outline: none
+<<<<<<< HEAD
+    background: #18aeb3
+=======
+    background: transparent
+    color: transparent
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+
+.slick-next
+  &:hover, &:focus
+    outline: none
+<<<<<<< HEAD
+    background: #18aeb3
+=======
+    background: transparent
+    color: transparent
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+
+.slick-prev
+  &:hover:before, &:focus:before
+    opacity: 1
+<<<<<<< HEAD
+    color: #fff
+=======
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+
+.slick-next
+  &:hover:before, &:focus:before
+    opacity: 1
+<<<<<<< HEAD
+    color: #fff
+=======
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+
+.slick-prev.slick-disabled:before, .slick-next.slick-disabled:before
+  opacity: 0.25
+
+.slick-prev:before, .slick-next:before
+<<<<<<< HEAD
+  font-size: 26px
+  font-weight: 500
+  line-height: 10px
+  color: #a49d97
+=======
+  font-family: "slick"
+  font-size: 20px
+  line-height: 1
+  color: #d8d7d7
+  opacity: 0.75
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+.slick-prev
+<<<<<<< HEAD
+  right: 60px
+=======
+  left: 5px
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+
+[dir="rtl"] .slick-prev
+  left: auto
+  right: -25px
+
+.slick-prev:before
+<<<<<<< HEAD
+  content: "<"
+=======
+  content: "←"
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+
+[dir="rtl"] .slick-prev:before
+  content: "→"
+
+.slick-next
+<<<<<<< HEAD
+  right: 35px
+=======
+  right: 5px
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+
+[dir="rtl"] .slick-next
+  left: -25px
+  right: auto
+
+.slick-next:before
+<<<<<<< HEAD
+  content: ">"
+=======
+  content: "→"
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+
+[dir="rtl"] .slick-next:before
+  content: "←"
+
+<<<<<<< HEAD
+=======
+.slick-slider
+  margin-bottom: 30px
+
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+.slick-dots
+  position: absolute
+  bottom: -45px
+  list-style: none
+  display: block
+  text-align: center
+  padding: 0
+  width: 100%
+  li
+    position: relative
+    display: inline-block
+    height: 20px
+    width: 20px
+    margin: 0 5px
+    padding: 0
+    cursor: pointer
+    button
+      border: 0
+      background: transparent
+      display: block
+      height: 20px
+      width: 20px
+      outline: none
+      line-height: 0
+      font-size: 0
+      color: transparent
+      padding: 5px
+      cursor: pointer
+      &:hover, &:focus
+        outline: none
+      &:hover:before, &:focus:before
+        opacity: 1
+      &:before
+        position: absolute
+        top: 0
+        left: 0
+        content: "•"
+        width: 20px
+        height: 20px
+<<<<<<< HEAD
+=======
+        font-family: "slick"
+>>>>>>> 5b727248a58fafe0cd14b54a2ca2e114a8ed3dd5
+        font-size: 6px
+        line-height: 20px
+        text-align: center
+        color: black
+        opacity: 0.25
+        -webkit-font-smoothing: antialiased
+        -moz-osx-font-smoothing: grayscale
+    &.slick-active button:before
+      color: black
+      opacity: 0.75
+.slider_wrapper
+  position: relative
+  .slider
+    z-index: 999
+    margin: 28px 40px
+    position: relative
+    .slick-list
+      position: relative
+      overflow: visible
+      overflow-x: hidden
+.slider-next,
+.slider-prev
+  position: absolute
+  top: 50%
+  margin-top: -29px
+  cursor: pointer
+  color: #ddd
+  transition: all .1s
+  font-size: 40px
+  &:hover
+    color: $green
+    margin-top: -30px
+    text-shadow: 0 1px 0 rgba(0,0,0,.2)
+  &:active
+    margin-top: -29px
+    text-shadow: none
+.slider-next
+  left: 20px
+.slider-prev
+  right: 20px
+
+.category #content .category-slick
+  margin-right: 0px
+
+  .slick-list
+    background: $background-light
+    margin-top: 20px
+    padding-bottom: 20px
